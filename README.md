@@ -102,7 +102,7 @@ public interface IAutoRepository extends JpaRepository<Auto, Long>{
 
 }
 ```
-### Creación de Interface de Service.
+## Creación de Interface de Service.
 
 ### Aquí se realizan las firmas de los métodos, donde definimos las acciones que podemos hacer con los datos.
 
@@ -122,7 +122,7 @@ public interface IAuto {
 }
 ```
 
-### Implementación de Interface de Service.
+## Implementación de Interface de Service.
 
 ### Aquí implementamos los metodos definidos de la interfaz y los sobreescribimos, además hacemos una inyección de dependencia (@Autowired) para poder utilizar los metodos del repository. Tenemos que indicar que la tendrá la anotación @Service.
 
@@ -163,7 +163,7 @@ public class AutoService implements IAuto {
 
 ```
 
-### Creación de Controller (endpoints).
+## Creación de Controller (endpoints).
 
 ### El Controller recibe las solicitudes provenientes de la vista y utiliza el Service para ejecutar las acciones correspondientes. Utilizamos la anotación @RestController
 
