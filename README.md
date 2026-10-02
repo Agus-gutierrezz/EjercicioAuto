@@ -1,9 +1,9 @@
 # Trabajo Practico Auto - Gutierrez Agustín Gabriel
 
-## Configuración del proyecto en Spring Initializr.
+## 1. Configuración del proyecto en Spring Initializr.
 ![configuracion](Configuracion-1.png)
 
-## Importación en IDE.
+## 2. Importación en IDE.
 
 ### Paso 1: Seleccionar file → Import
 ![paso 1 - Import](Import.png)
@@ -14,7 +14,7 @@
 ### Paso 3: Seleccionar Browse → Buscar el proyecto descargado → seleccionar Finish
 ![paso 3 - final](SeleccionarProyecto.png)
 
-## Creación de la Estructura de Paquetes.
+## 3. Creación de la Estructura de Paquetes.
 
 ### Con la finalidad de respetar estrictamente la arquitectura en capas (Controller → Service → Repository → DB), es necesario crear 5 paquetes dentro de la ruta principal com.distribuidos.auto:
 
@@ -32,7 +32,7 @@
 
 ![Estructura-Proyecto](Estructura-1.png)
 
-## Creación de la Entidad Auto.java.
+## 4. Creación de la Entidad Auto.java.
 
 ### Las entidades basicamente serían nuestra tabla en la base de datos, dentro de la clase java se la indica con la anotación @Entity
 
@@ -83,7 +83,7 @@ public class Auto {
 	
 }
 ```
-## Creación de Interface de Repository.
+## 5. Creación de Interface de Repository.
 
 ### La Interfaz de repository nos permite consultar, guardar, modificar o eliminar datos de la base de datos. Utilizando la anotación @Repository, además de extender de JPA y indicar de que clase será el repositorio.
 
@@ -102,7 +102,7 @@ public interface IAutoRepository extends JpaRepository<Auto, Long>{
 
 }
 ```
-## Creación de Interface de Service.
+## 6. Creación de Interface de Service.
 
 ### Aquí se realizan las firmas de los métodos, donde definimos las acciones que podemos hacer con los datos.
 
@@ -122,7 +122,7 @@ public interface IAuto {
 }
 ```
 
-## Implementación de Interface de Service.
+## 7. Implementación de Interface de Service.
 
 ### Aquí implementamos los metodos definidos de la interfaz y los sobreescribimos, además hacemos una inyección de dependencia (@Autowired) para poder utilizar los metodos del repository. Tenemos que indicar que la tendrá la anotación @Service.
 
@@ -163,7 +163,7 @@ public class AutoService implements IAuto {
 
 ```
 
-## Creación de Controller (endpoints).
+## 8. Creación de Controller (endpoints).
 
 ### El Controller recibe las solicitudes provenientes de la vista y utiliza el Service para ejecutar las acciones correspondientes. Utilizamos la anotación @RestController
 
@@ -205,7 +205,7 @@ public class AutoController {
 
 ```
 
-## Configuración de properties y XAMMP.
+## 9. Configuración de properties y XAMMP.
 
 ```plaintext
 spring.application.name=auto
@@ -225,7 +225,7 @@ spring.datasource.password=
 ### Ingrese el nombre de su base de datos y haga clic en crear
 ![base de dat0s](bd.png)
 
-## ¿Cómo creamos utilizamos Postman con nuestro proyecto de Spring?
+## 10. ¿Cómo creamos utilizamos Postman con nuestro proyecto de Spring?
 
 ### En nuestros endpoints (Controller) tendremos que tener definida la ruta y el tipo de petición que haremos, según las acciones que querramos hacer.
 
